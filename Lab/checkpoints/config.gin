@@ -1,0 +1,28 @@
+# Parameters for Config:
+# ==============================================================================
+Config.checkpoint_dir = './Lab//checkpoints'
+Config.data_dir = './Lab/'
+Config.dataset_loader = 'llff'
+Config.factor = 4
+Config.far = 1000000.0
+Config.near = 0.2
+
+# Parameters for Model:
+# ==============================================================================
+Model.opaque_background = True
+Model.raydist_fn = @jnp.reciprocal
+
+# Parameters for NerfMLP:
+# ==============================================================================
+NerfMLP.disable_density_normals = True
+NerfMLP.net_depth = 8
+NerfMLP.net_width = 1024
+NerfMLP.warp_fn = @coord.contract
+
+# Parameters for PropMLP:
+# ==============================================================================
+PropMLP.disable_density_normals = True
+PropMLP.disable_rgb = True
+PropMLP.net_depth = 4
+PropMLP.net_width = 256
+PropMLP.warp_fn = @coord.contract
